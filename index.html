@@ -1,73 +1,223 @@
-<!DOCTYPE html>
-<html lang="fr">
+:::writing{variant="document" id="73941"}
+
+<!DOCTYPE html><html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Altévia - Les rencontres professionnelles autrement</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="hero">
-<nav>
-<div class="logo">ALTÉVIA</div>
-<a href="#contact" class="btn">Demander un devis</a>
-</nav>
-<div class="hero-content">
-<h1>Les rencontres professionnelles autrement</h1>
-<p>Créer des connexions authentiques, développer son réseau et vivre des expériences mémorables.</p>
-<a href="#contact" class="btn">Demander un devis</a>
-</div>
-</header>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alt&Via — Expériences professionnelles premium</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --vert:#0F2E2A;
+  --ivoire:#F5F1E8;
+  --bordeaux:#7A2E2E;
+  --gold:#C8B68A;
+  --anthra:#2B2B2B;
+}
 
-<section>
-<h2>Le concept</h2>
-<p>Altévia imagine et organise des événements de réseautage professionnels clés en main. Nous créons des expériences élégantes, conviviales et humaines qui favorisent les échanges et les collaborations.</p>
-</section>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-<section>
-<h2>Pour qui ?</h2>
-<div class="cards">
-<div class="card">Entreprises</div>
-<div class="card">Collectivités</div>
-<div class="card">Associations</div>
-<div class="card">Clubs d'entrepreneurs</div>
-</div>
-</section>
+body{
+  font-family: Inter, sans-serif;
+  background: var(--ivoire);
+  color: var(--anthra);
+  overflow-x:hidden;
+}
 
-<section>
-<h2>Nos prestations</h2>
-<div class="cards">
-<div class="card"><h3>Soirées networking</h3></div>
-<div class="card"><h3>Événements sur mesure</h3></div>
-<div class="card"><h3>Animation & coordination</h3></div>
-</div>
-</section>
+/* TYPO */
+h1,h2,h3{
+  font-family:"Playfair Display", serif;
+  letter-spacing:-0.5px;
+}
 
-<section>
-<h2>Pourquoi Altévia ?</h2>
-<ul>
-<li>Approche humaine</li>
-<li>Accompagnement personnalisé</li>
-<li>Organisation clé en main</li>
-<li>Expérience premium accessible</li>
-<li>Duo fondateur complémentaire</li>
-</ul>
-</section>
+p{
+  font-weight:300;
+  line-height:1.7;
+}
 
-<section>
-<h2>À propos</h2>
-<p>Altévia est née de l'envie de réinventer les rencontres professionnelles. Nous croyons qu'un événement réussi se mesure à la qualité des échanges qu'il génère.</p>
-</section>
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background:
+    linear-gradient(180deg, rgba(15,46,42,0.75), rgba(15,46,42,0.55)),
+    url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=2400&q=80');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  position:relative;
+}
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Prêt à imaginer votre prochain événement ?</p>
-<p><strong>contact@alt-et-via.fr</strong></p>
-<a class="btn" href="mailto:contact@alt-et-via.fr">Demander un devis</a>
-</section>
+.hero-content{
+  max-width:900px;
+  animation:fadeIn 1.5s ease;
+}
 
-<footer>© Altévia</footer>
-</body>
+.hero h1{
+  font-size:3.2rem;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:0.9;
+  margin-bottom:30px;
+}
+
+.btn{
+  background: linear-gradient(135deg, var(--gold), #e6d7b0);
+  color: var(--vert);
+  padding:14px 30px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  border-radius:2px;
+  transition:0.4s;
+  letter-spacing:0.5px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* SECTIONS */
+section{
+  padding:120px 20px;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
+}
+
+section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.4s;}
+section:nth-child(4){animation-delay:0.6s;}
+section:nth-child(5){animation-delay:0.8s;}
+
+h2{
+  font-size:2.4rem;
+  margin-bottom:25px;
+  color:var(--vert);
+}
+
+/* CONCEPT */
+.center{
+  text-align:center;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  margin-top:50px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-left:3px solid var(--gold);
+  box-shadow:0 20px 60px rgba(0,0,0,0.05);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* ABOUT */
+.about{
+  background:white;
+  padding:140px 20px;
+}
+
+/* CONTACT */
+.contact{
+  background:linear-gradient(135deg, var(--vert), #0b1f1c);
+  color:white;
+  text-align:center;
+  padding:140px 20px;
+}
+
+.contact h2{
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  padding:30px;
+  text-align:center;
+  font-size:0.85rem;
+  background:#0a0a0a;
+  color:#aaa;
+  letter-spacing:0.5px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* SUBTLE LUXE DETAIL */
+.glow{
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(200,182,138,0.15), transparent 70%);
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+</style></head><body><div class="hero">
+  <div class="glow"></div>  <div class="hero-content">
+    <h1>Les soirées qui transforment les rencontres en connexions réelles.</h1>
+    <p>Des expériences professionnelles confidentielles, élégantes et profondément humaines.</p>
+    <a class="btn" href="#contact">Organiser une soirée</a>
+  </div>
+</div><section>
+  <h2 class="center">Créer du lien autrement</h2>
+  <p class="center">
+    Alt&Via imagine des expériences où les échanges ne sont plus forcés, mais naturels, fluides et mémorables.
+    Chaque soirée est pensée comme un lieu de rencontre authentique entre entrepreneurs et décideurs.
+  </p>
+</section><section>
+  <h2 class="center">L'expérience Alt&Via</h2>  <div class="grid">
+    <div class="card">Lieux d’exception sélectionnés avec soin</div>
+    <div class="card">Ambiance immersive et chaleureuse</div>
+    <div class="card">Networking naturel, sans pression</div>
+    <div class="card">Organisation clé en main</div>
+    <div class="card">Expériences sur mesure</div>
+  </div>
+</section><section class="about">
+  <h2 class="center">À propos d’Alt&Via</h2>
+  <p class="center" style="max-width:800px;margin:auto;">
+    Alt&Via est née de la volonté d’un couple d’entrepreneurs convaincus que les plus belles opportunités naissent des rencontres humaines.
+    Nous créons des événements confidentiels où l’élégance, la simplicité et la qualité des échanges priment sur le reste.
+  </p>
+</section><section class="contact" id="contact">
+  <h2>Construisons votre prochaine soirée</h2>
+  <p>Parlons de votre projet et imaginons une expérience unique.</p>
+  <br>
+  <a class="btn" href="mailto:contact@alt-et-via.fr">Prendre rendez-vous</a>
+</section><footer>
+  Alt&Via — Expériences professionnelles confidentielles
+</footer></body>
 </html>
+:::
